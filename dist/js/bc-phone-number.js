@@ -39,6 +39,7 @@ angular.module('bcPhoneNumber', ['bcPhoneNumberTemplates', 'ui.bootstrap'])
     scope: {
       preferredCountriesCodes: '@preferredCountries',
       defaultCountryCode: '@defaultCountry',
+      selectedCountry: '=',
       isValid: '=',
       ngModel: '='
     },
@@ -73,6 +74,8 @@ angular.module('bcPhoneNumber', ['bcPhoneNumberTemplates', 'ui.bootstrap'])
           scope.number = number;
         }
       };
+
+      scope.resetCountry();
 
       scope.$watch('ngModel', function(newValue) {
         scope.number = newValue;
